@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ConnectorLib;
 using CrowdControl.Common;
@@ -29,8 +30,27 @@ namespace CrowdControl.Games.Packs
 
             public override IList<string> Codes { get; } = new[] { "language_jp", "language_en", "language_de", "language_fr", "language_it", "language_es" };
 
-            public override bool StartAction()
-                => Connector.Write8(ADDR_LANGUAGE, (byte)Lookup(LanguageOption.Japanese, LanguageOption.English, LanguageOption.German, LanguageOption.French, LanguageOption.Italian, LanguageOption.Spanish));
+            public override bool BidWarAction(string code)
+                => Connector.Write8(ADDR_LANGUAGE, (byte)(code switch
+                {
+                    "language_jp" => LanguageOption.Japanese,
+                    "language_en" => LanguageOption.English,
+                    "language_de" => LanguageOption.German,
+                    "language_fr" => LanguageOption.French,
+                    "language_it" => LanguageOption.Italian,
+                    "language_es" => LanguageOption.Spanish,
+                    _ => LanguageOption.English
+                }));
+
+            /*public override IDictionary<string, Func<bool>> BidWarActions => new Dictionary<string, Func<bool>>
+            {
+                {"language_jp", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.Japanese)},
+                {"language_en", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.English)},
+                {"language_de", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.German)},
+                {"language_fr", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.French)},
+                {"language_it", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.Italian)},
+                {"language_es", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.Spanish)}
+            };*/
         }
     }
 }
