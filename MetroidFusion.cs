@@ -52,12 +52,22 @@ namespace CrowdControl.Games.Packs
             new("Fire Charge Bombs", "fire_chargebomb"),
             new("Fire Power Bombs", "fire_powerbomb"),
 
-            new("One-Hit KO", "ohko"){Duration = 15}
+            new("One-Hit KO", "ohko"){Duration = 15},
+
+            //language_jp", "language_en", "language_de", "language_fr", "language_it", "language_es
+            new("Game Language", "language", ItemKind.BidWar),
+                new("Japanese", "language_jp", ItemKind.BidWarValue),
+                new("English", "language_en", ItemKind.BidWarValue),
+                new("German", "language_de", ItemKind.BidWarValue),
+                new("French", "language_fr", ItemKind.BidWarValue),
+                new("Italian", "language_it", ItemKind.BidWarValue),
+                new("Spanish", "language_es", ItemKind.BidWarValue)
             /*Invert Controls/Buttons
-Enemy Effects
-Energy Tank 
-Increase Boss health
-Equip/Unequip weapons*/
+                Enemy Effects
+                Energy Tank 
+                Increase Boss health
+                Equip/Unequip weapons
+                Change Room Type*/
         };
 
         public override List<ItemType> ItemTypes => new(new[]
