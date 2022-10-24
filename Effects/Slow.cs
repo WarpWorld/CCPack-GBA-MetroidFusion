@@ -1,0 +1,29 @@
+using System.Collections.Generic;
+using ConnectorLib;
+using CrowdControl.Games.SmartEffects;
+
+namespace CrowdControl.Games.Packs
+{
+    public partial class MetroidFusion
+    {
+        [EffectHandler("shinespark")]
+        public class Slow : EffectHandler<MetroidFusion, IGBAConnector>
+        {
+            private const uint ADDR_SLOW = 0x3001330;
+
+            public Slow(MetroidFusion pack) : base(pack) { }
+
+            public override EffectHandlerType Type => EffectHandlerType.Durational;
+
+            public override IList<string> Codes { get; } = new[] { "slow" };
+
+            public override bool RetryOnFail => false;
+
+            public override bool StartAction()
+                => Connector.Write8(ADDR_SLOW, 0xFF);
+
+            public override void StartFollowup()
+                => Connector.SendMessage($"{Request.DisplayViewer} slowed you down.");
+        }
+    }
+}
