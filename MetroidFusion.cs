@@ -25,10 +25,6 @@ namespace CrowdControl.Games.Packs
 
         public override List<Effect> Effects { get; } = new()
         {
-            new("Currencies", "currencies", ItemKind.Folder),
-            new("Overworld Effects", "overworld", ItemKind.Folder),
-            new("Battle Effects", "battle", ItemKind.Folder),
-
             new("Kill Samus", "killplayer"),
             new("Force Morphball", "forceMorph"){Duration = 15},
             new("Freeze Samus", "freeze"){Duration = 10},
@@ -85,7 +81,7 @@ namespace CrowdControl.Games.Packs
             new ROMInfo("Metroid Fusion Beta 2002-09-11 (Europe)", ROMStatus.NotSupported, s => Patching.MD5(s, "37477683A1E646431C5396164DF388F3"), "Beta ROM versions are not supported.")
         });
 
-        public override Game Game { get; } = new(14, "Mega Man Battle Network 3", "MegaManBattleNetwork3", "GBA", ConnectorType.GBAConnector);
+        public override Game Game { get; } = new(0, "Metroid Fusion", "MetroidFusion", "GBA", ConnectorType.GBAConnector);
 
         protected override bool IsReady(EffectRequest request) => Connector.IsEqual8(ADDR_GAME_MODE, 0x01);
 
