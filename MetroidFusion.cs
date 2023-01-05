@@ -72,14 +72,14 @@ namespace CrowdControl.Games.Packs
             new ItemType("Quantity", "quantity999", ItemType.Subtype.Slider, "{\"min\":1,\"max\":999}")
         });
 
-        public override List<ROMInfo> ROMTable => new(new[]
+        public override ROMTable ROMTable => new[]
         {
             new ROMInfo("Metroid Fusion (USA)", ROMStatus.ValidPatched, s => Patching.MD5(s, "AF5040FC0F579800151EE2A683E2E5B5")),
             new ROMInfo("Metroid Fusion (Japan)", ROMStatus.NotSupported, s => Patching.MD5(s, "E535A6EC2EB86D183453037289527A63"), "The Japanese ROM is not supported."),
             new ROMInfo("Metroid Fusion (Europe)", ROMStatus.NotSupported, s => Patching.MD5(s, "EB462F708C715309D08FD7968825AE9E"), "The European ROM is not supported."),
             new ROMInfo("Metroid Fusion Beta 2002-09-16 (Europe)", ROMStatus.NotSupported, s => Patching.MD5(s, "305060AA2E1F0A854B772FA23988C2B9"), "Beta ROM versions are not supported."),
             new ROMInfo("Metroid Fusion Beta 2002-09-11 (Europe)", ROMStatus.NotSupported, s => Patching.MD5(s, "37477683A1E646431C5396164DF388F3"), "Beta ROM versions are not supported.")
-        });
+        };
 
         public override Game Game { get; } = new(0, "Metroid Fusion", "MetroidFusion", "GBA", ConnectorType.GBAConnector);
 
