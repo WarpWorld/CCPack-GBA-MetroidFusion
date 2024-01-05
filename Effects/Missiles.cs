@@ -21,11 +21,11 @@ namespace CrowdControl.Games.Packs
             public override IList<string> Codes { get; } = new[] { "missiles_add", "missiles_remove" };
 
             public override bool StartAction()
-                => Connector.RangeAdd16(ADDR_MISSILES, Parameter<int>("quantity") * Lookup(1, -1), 0, 999, false);
+                => Connector.RangeAdd16(ADDR_MISSILES, Quantity * Lookup(1, -1), 0, 999, false);
 
-            public override void StartFollowup()
+            public override bool StartFollowup()
                 => Connector.SendMessage(
-                    $"{Request.DisplayViewer} {Lookup("gave", "took")} {Parameter<int>("quantity")} missiles.");
+                    $"{Request.DisplayViewer} {Lookup("gave", "took")} {Quantity} missiles.");
         }
     }
 }

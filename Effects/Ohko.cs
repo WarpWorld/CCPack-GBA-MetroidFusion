@@ -32,7 +32,7 @@ namespace CrowdControl.Games.Packs
             public override bool StopAction()
                 => Connector.Write16(ADDR_HEALTH, oldHealth);
 
-            public override void StartFollowup()
+            public override bool StartFollowup()
                 => Connector.SendMessage($"{Request.DisplayViewer} started one-hit KO.");
         }
     }

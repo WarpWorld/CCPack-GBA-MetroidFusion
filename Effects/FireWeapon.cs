@@ -33,11 +33,11 @@ namespace CrowdControl.Games.Packs
             public override bool StartCondition()
                 => Connector.IsZero8(ADDR_COOLDOWN);
 
+            public override bool StartFollowup()
+                => Connector.SendMessage($"{Request.DisplayViewer} fired your {Lookup("charge beam", "missiles", "bombs", "charge bombs", "power bombs")}.");
+
             public override bool StartAction()
                 => Connector.Write8(ADDR_FIRE_WEAPON, (byte)Lookup(WeaponType.Beam, WeaponType.Missle, WeaponType.Bomb, WeaponType.ChargeBomb, WeaponType.PowerBomb));
-
-            public override void StartFollowup()
-                => Connector.SendMessage($"{Request.DisplayViewer} fired your {Lookup("charge beam", "missiles", "bombs", "charge bombs", "power bombs")}.");
         }
     }
 }

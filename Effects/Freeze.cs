@@ -21,7 +21,7 @@ namespace CrowdControl.Games.Packs
                 => Connector.Freeze8(ADDR_SAMUS_ACTIONS, (byte)SamusActions.Freeze) &&
                    Connector.Write8(0x03001253, 0xFF);
 
-            public override void StartFollowup()
+            public override bool StartFollowup()
                 => Connector.SendMessage($"{Request.DisplayViewer} froze you.");
 
             public override bool StopAction()

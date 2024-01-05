@@ -20,7 +20,7 @@ namespace CrowdControl.Games.Packs
             public override bool StartAction()
                 => Connector.Write8(ADDR_GAME_MODE, Lookup<byte>(0x03, 0x05, 0x02));
 
-            public override void StartFollowup()
+            public override bool StartFollowup()
                 => Connector.SendMessage($"{Request.DisplayViewer} {Lookup("opened your map.", "summoned SA-X?", "reset your game.")}");
         }
     }

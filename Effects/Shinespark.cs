@@ -25,7 +25,7 @@ namespace CrowdControl.Games.Packs
             public override bool StartAction()
                 => Connector.Write8(ADDR_SHINESPARK, 0xFF);
 
-            public override void StartFollowup()
+            public override bool StartFollowup()
                 => Connector.SendMessage($"{Request.DisplayViewer} gave you shinespark.");
         }
     }

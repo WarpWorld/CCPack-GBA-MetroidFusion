@@ -20,7 +20,7 @@ namespace CrowdControl.Games.Packs
 
         private const uint ADDR_GAME_MODE = 0x3000BDE;
 
-        public MetroidFusion(Player player, Func<CrowdControlBlock, bool> responseHandler, Action<object> statusUpdateHandler) : base(player, responseHandler, statusUpdateHandler) { }
+        public MetroidFusion(UserRecord player, Func<CrowdControlBlock, bool> responseHandler, Action<object> statusUpdateHandler) : base(player, responseHandler, statusUpdateHandler) { }
 
         public override EffectList Effects { get; } = new Effect[]
         {
@@ -50,9 +50,9 @@ namespace CrowdControl.Games.Packs
             new("One-Hit KO", "ohko"){Duration = 15},
 
             //language_jp", "language_en", "language_de", "language_fr", "language_it", "language_es
-            new("Game Language", "language", ItemKind.BidWar)
+            /*new("Game Language", "language", ItemKind.BidWar)
             {
-                Parameters = new ParameterGroup("Language",
+                Parameters = new ParameterList("Language",
                     new("Japanese", "language_jp"),
                     new("English", "language_en"),
                     new("German", "language_de"),
@@ -60,7 +60,7 @@ namespace CrowdControl.Games.Packs
                     new("Italian", "language_it"),
                     new("Spanish", "language_es")
                     )
-            }
+            }*/
             /*Invert Controls/Buttons
                 Enemy Effects
                 Energy Tank 
