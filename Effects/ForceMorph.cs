@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using ConnectorLib;
 using CrowdControl.Games.SmartEffects;
 
-namespace CrowdControl.Games.Packs.MetroidFusion;
+namespace CrowdControl.Games.Packs.MetroidFusion.Effects;
 
 public partial class MetroidFusion
 {
@@ -18,12 +18,12 @@ public partial class MetroidFusion
         public override IList<string> Mutexes { get; } = new[] { "samusAction" };
 
         public override bool StartAction()
-            => Connector.Write8(ADDR_SAMUS_ACTIONS, (byte)SamusActions.Morphball);
+            => Connector.Write8(Packs.MetroidFusion.MetroidFusion.ADDR_SAMUS_ACTIONS, (byte)Packs.MetroidFusion.MetroidFusion.SamusActions.Morphball);
 
         public override bool StartFollowup()
             => Connector.SendMessage($"{Request.DisplayViewer} morphed you.");
 
         public override bool StopAction()
-            => Connector.Unfreeze(ADDR_SAMUS_ACTIONS);
+            => Connector.Unfreeze(Packs.MetroidFusion.MetroidFusion.ADDR_SAMUS_ACTIONS);
     }
 }
