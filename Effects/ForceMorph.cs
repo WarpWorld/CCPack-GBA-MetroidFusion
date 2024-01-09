@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using ConnectorLib;
 using CrowdControl.Games.SmartEffects;
 
-namespace CrowdControl.Games.Packs.MetroidFusion.Effects;
+namespace CrowdControl.Games.Packs.MetroidFusion;
 
 public partial class MetroidFusion
 {
