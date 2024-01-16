@@ -18,13 +18,13 @@ public partial class MetroidFusion
         public override IList<string> Mutexes { get; } = new[] { "samusAction" };
 
         public override bool StartAction()
-            => Connector.Freeze8(Packs.MetroidFusion.MetroidFusion.ADDR_SAMUS_ACTIONS, (byte)Packs.MetroidFusion.MetroidFusion.SamusActions.Freeze) &&
+            => Connector.Freeze8(ADDR_SAMUS_ACTIONS, (byte)SamusActions.Freeze) &&
                Connector.Write8(0x03001253, 0xFF);
 
         public override bool StartFollowup()
             => Connector.SendMessage($"{Request.DisplayViewer} froze you.");
 
         public override bool StopAction()
-            => Connector.Unfreeze(Packs.MetroidFusion.MetroidFusion.ADDR_SAMUS_ACTIONS);
+            => Connector.Unfreeze(ADDR_SAMUS_ACTIONS);
     }
 }

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using ConnectorLib;
 using CrowdControl.Games.SmartEffects;
 
@@ -39,15 +39,5 @@ public partial class MetroidFusion
                 "language_es" => LanguageOption.Spanish,
                 _ => LanguageOption.English
             }));
-
-        /*public override IDictionary<string, Func<bool>> BidWarActions => new Dictionary<string, Func<bool>>
-        {
-            {"language_jp", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.Japanese)},
-            {"language_en", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.English)},
-            {"language_de", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.German)},
-            {"language_fr", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.French)},
-            {"language_it", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.Italian)},
-            {"language_es", ()=>Connector.Write8(ADDR_LANGUAGE, (byte)LanguageOption.Spanish)}
-        };*/
     }
-}
+}*/

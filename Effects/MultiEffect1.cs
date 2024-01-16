@@ -18,7 +18,7 @@ public partial class MetroidFusion
         public override IList<string> Mutexes { get; } = new[] { "mainState" };
 
         public override bool StartAction()
-            => Connector.Write8(Packs.MetroidFusion.MetroidFusion.ADDR_GAME_MODE, Lookup<byte>(0x03, 0x05, 0x02));
+            => Connector.Write8(ADDR_GAME_MODE, Lookup<byte>(0x03, 0x05, 0x02));
 
         public override bool StartFollowup()
             => Connector.SendMessage($"{Request.DisplayViewer} {Lookup("opened your map.", "summoned SA-X?", "reset your game.")}");

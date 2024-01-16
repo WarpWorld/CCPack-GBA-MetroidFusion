@@ -18,7 +18,7 @@ public partial class MetroidFusion
         public override IList<string> Mutexes { get; } = new[] { "samusAction", "health" };
 
         public override bool StartAction()
-            => Connector.Write8(Packs.MetroidFusion.MetroidFusion.ADDR_SAMUS_ACTIONS, (byte)Packs.MetroidFusion.MetroidFusion.SamusActions.Kill);
+            => Connector.Write8(ADDR_SAMUS_ACTIONS, (byte)SamusActions.Kill);
 
         public override bool StartFollowup()
             => Connector.SendMessage($"{Request.DisplayViewer} killed you.");

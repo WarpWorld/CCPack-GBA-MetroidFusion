@@ -27,7 +27,7 @@ public partial class MetroidFusion
         public override bool RefreshAction()
             => Connector.Write16(ADDR_HEALTH, 0x01);
 
-        public override SITimeSpan RefreshInterval { get; } = 0.1;
+        public override SITimeSpan RefreshInterval { get; } = 0.2;
 
         public override bool StopAction()
             => Connector.Write16(ADDR_HEALTH, oldHealth);
