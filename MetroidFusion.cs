@@ -1,5 +1,4 @@
-﻿using System;
-using CrowdControl.Common;
+﻿using CrowdControl.Common;
 using CrowdControl.Games.SmartEffects;
 using JetBrains.Annotations;
 
