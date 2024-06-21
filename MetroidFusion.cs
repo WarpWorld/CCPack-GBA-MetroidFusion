@@ -79,7 +79,10 @@ partial class MetroidFusion : GBAEffectPack, IHandlerCollection
 
     public override Game Game { get; } = new("Metroid Fusion", "MetroidFusion", "GBA", ConnectorType.GBAConnector);
 
-    protected override bool IsReady(EffectRequest? request) => Connector.IsEqual8(ADDR_GAME_MODE, 0x01);
+    protected override GameState GetGameState()
+    {
+        return Connector.IsEqual8(ADDR_GAME_MODE, 0x01) ? GameState.Ready : GameState.WrongMode;
+    }
 
     public override bool StopAllEffects()
     {
