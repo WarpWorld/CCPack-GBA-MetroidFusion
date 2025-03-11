@@ -1,6 +1,8 @@
-﻿using CrowdControl.Common;
+﻿using ConnectorLib;
+using CrowdControl.Common;
 using CrowdControl.Games.SmartEffects;
 using JetBrains.Annotations;
+using ConnectorType = CrowdControl.Common.ConnectorType;
 
 //ccpragma { "include" : [ ".\\Effects\\*.cs" ] }
 namespace CrowdControl.Games.Packs.MetroidFusion;
