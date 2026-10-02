@@ -1,5 +1,11 @@
 ﻿# Metroid Fusion
 
+## Pack metadata
+
+- Game identifier: `MetroidFusion`
+- Platform: `GBA`
+- Connector type: `GBAConnector`
+
 ## What this pack provides
 This Crowd Control pack integrates **Metroid Fusion** with Crowd Control through its GBA pack implementation. Its source defines the game-state checks and effect handling.
 
